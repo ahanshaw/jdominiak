@@ -1,0 +1,530 @@
+/* box sizing*/
+
+*, *:after, *:before {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	-webkit-backface-visibility: hidden;
+}
+
+/* clearfix */
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+// color
+
+$white:#fff;
+$whiteBackground:rgba(255,255,255,.8);
+$gray:#444;
+$lightGray:#ccc;
+$blue:rgba(54,94,155,1.0);
+$mediumBlue:rgba(81,148,219,.4);
+$lightBlue:rgba(81,148,219,.1);
+$clear:rgba(255,255,255,0);
+
+// fonts 
+
+$fontNormal:'latoregular', sans-serif;
+$fontMedium:'latomedium', sans-serif;
+$fontBold:'latobold', sans-serif;
+
+// media breaks 
+
+$largeBreak: 1024px;
+$mediumBreak:768px;
+$smallBreak: 750px;
+
+html,
+body,
+section {
+	width:100%;
+	height:100%;
+}
+
+body {
+	font-family:$fontNormal;
+	font-size: .85em;
+	letter-spacing: .025em;
+	color:$gray;
+}
+
+img {
+	width:100%;
+	display:block;
+}
+
+h2 {
+	font-size:200%;
+	margin-bottom:20px;
+	@media screen and (max-width: $largeBreak) {
+		margin-bottom:10px;
+	}
+}
+
+a {
+	color:$blue;
+	text-decoration: none;
+}
+
+a:hover {
+	color:$gray;
+}
+
+/* nav */
+
+nav {
+	width:100%;
+	height:50px;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:100;
+	padding-right:10%;
+	background:$whiteBackground;
+	@media screen and (max-width: $largeBreak) {
+		padding-right:6%;
+	}
+	@media screen and (max-width: $mediumBreak) {
+		padding-right:4%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		height:auto;
+		background:$blue;
+		padding:0;
+	}
+}
+
+nav p {
+	display:none;
+	font-size:150%;
+	text-align: right;
+	color:$white;
+	margin:0;
+	padding:20px 20px 0 0;
+	@media screen and (max-width: $smallBreak) {
+		display:block;
+	}
+}
+
+nav ul {
+	display:block;
+	list-style-type: none;
+	text-align: right;
+	@media screen and (max-width: $smallBreak) {
+		display:none;
+	}
+}
+
+nav li {
+	font-family:$fontBold;
+	font-size: 95%;
+	text-transform: uppercase;
+	display: inline;
+	@media screen and (max-width: $smallBreak) {
+		display:block;
+		padding:20px 0;
+	}
+}
+
+nav a,
+nav a:hover  {
+	color:$blue;
+	text-decoration:none;
+	margin:0 20px;
+	padding:20px;
+	@media screen and (max-width: $smallBreak) {
+		color:$white;
+	}
+}
+
+nav a:before  {
+	font-family: FontAwesome;
+	font-size: 75%;
+	content: "\f04b";
+	padding-right:5px;
+	color:$clear;
+}
+
+nav a:hover:before,
+nav .current a:before  {
+	color:$blue;
+	vertical-align: middle;
+	@media screen and (max-width: $smallBreak) {
+		color:$clear;
+	}
+}
+
+nav .external a  {
+	padding-left: 5px;
+}
+
+nav .external a:before  {
+	font-family: FontAwesome;
+	font-size: 85%;
+	color:$clear;
+    vertical-align: -1px;
+	content: "\f08e";
+	padding-right: 5px;
+	@media screen and (max-width: $smallBreak) {
+		color:$white;
+	}
+}
+
+nav .external a:hover:before  {
+	color:$blue;
+	@media screen and (max-width: $smallBreak) {
+		color:$clear;
+	}
+}
+
+nav .current a {
+	color:$gray;
+	padding:20px;
+	@media screen and (max-width: $smallBreak) {
+		color:$white;
+	}
+}
+
+/* home */
+
+#home {
+	background:$blue;
+	@media screen and (max-width: $smallBreak) {
+		height:auto;
+		min-height: 100%;
+	}
+}
+
+.backstretch {
+	display:block;
+	@media screen and (max-width: $smallBreak) {
+		display:none;
+	}	
+}
+
+#banner {
+	width:100%;
+	height:300px;
+	position:absolute;
+	bottom:10%;
+	padding:10px 18%;
+	background:$whiteBackground;
+	@media screen and (max-width: $largeBreak) {
+		padding:10px 10%;
+	}
+	@media screen and (max-width: $mediumBreak) {
+		padding:10px 4%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		height:auto;
+		min-height:100%;
+		position:relative;
+		top:0;
+		padding:40px 0 20px 0;
+		background:$blue;
+	}
+}
+
+@mixin vertCenter {	
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);	
+	-ms-transform: translateY(-50%);	
+	transform: translateY(-50%);	
+}
+
+@mixin vertCenterMobile {	
+	position: relative;
+	top: 0;
+	-webkit-transform: translateY(0%);	
+	-ms-transform: translateY(0%);	
+	transform: translateY(0%);	
+}
+
+#logo {
+	width:28%;
+	float:left;
+	@include vertCenter;
+	@media screen and (max-width: $largeBreak) {
+		width:25%;
+	}
+	@media screen and (max-width: $mediumBreak) {
+		width:20%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		width:100%;
+		float:none;
+		@include vertCenterMobile;
+	}
+}
+
+#logo img {
+	@media screen and (max-width: $smallBreak) {
+		width:50%;
+		margin:50px auto 20px auto;
+	}
+}
+
+.blueLogo {
+	display:block;
+	@media screen and (max-width: $smallBreak) {
+		display:none;
+	}
+}
+
+.whiteLogo {
+	display:none;
+	@media screen and (max-width: $smallBreak) {
+		display:block;
+	}
+}
+
+#bio {
+	width:70%;
+	float:right;
+	padding-left: 40px;
+	@include vertCenter;
+	@media screen and (max-width: $largeBreak) {
+		width:75%;
+	}
+	@media screen and (max-width: $mediumBreak) {
+		width:80%;
+	}
+	@media screen and (max-width: $smallBreak) {
+		width:100%;
+		float:none;
+		color:$white;
+		padding: 0 30px;
+		@include vertCenterMobile;
+	}
+}
+
+#bio h1 {
+	font-family:'CenturyGothic-Bold', sans-serif;
+	font-size:215%;
+	margin:0 0 5px 0;
+	@media screen and (max-width: $smallBreak) {
+		text-align:center;
+		margin:0 0 10px 0;
+	}
+}
+
+#bio p {
+	font-size:110%;
+	line-height:140%;
+	@media screen and (max-width: $smallBreak) {
+		padding:10px 0 15px;
+	}
+}
+
+#bio a {
+	@media screen and (max-width: $smallBreak) {
+		color:$white;
+		text-decoration: underline;
+	}
+}
+
+/* work */
+
+#work {
+	height:auto;
+	padding-top:10px;
+	background:$lightBlue;
+	@media screen and (max-width: $smallBreak) {
+		height:auto;
+		padding:60px 0 20px 0;
+	}
+}
+
+#work h2 {
+	display:none;
+	@media screen and (max-width: $smallBreak) {
+		display:block;
+		margin-bottom:0;
+		padding-left:40px;
+	}
+}
+
+#itemContainer {
+	margin:0 10%;
+	@media screen and (max-width: $largeBreak) {
+		margin:0 6%;
+	}
+}
+
+.grid-sizer,
+.item {
+	width:33.3%;
+	margin:20px 0;
+	padding:40px 40px 20px 40px;
+	@media screen and (max-width: $largeBreak) {
+		padding:20px 20px 10px 20px;
+	}
+	@media screen and (max-width: $smallBreak) {
+		width:100%;
+		padding:0 20px;
+	}
+}
+
+.item:hover {
+	background:$white;
+	@media screen and (max-width: $smallBreak) {
+		background:$clear;
+	}
+}
+
+.item img {
+	width:100%;
+	border: 1px solid #e1e1e1;
+}
+
+.item h3 {
+	font-family:$fontBold;
+	font-size:110%;
+	text-transform: uppercase;
+	line-height:125%;
+	color:$blue;
+	margin-top:20px;
+}
+
+.item p {
+	font-size:105%;
+	color:$gray;
+	margin-top:-10px;
+	@media screen and (max-width: $smallBreak) {
+		font-size:110%;
+		padding-bottom:20px;
+	}
+}
+
+.workIntro {
+	font-size:115% !important;
+	line-height:175%;
+	color:$blue !important;
+	padding-left:5px;
+	@media screen and (max-width: $smallBreak) {
+		font-size:110%;
+		line-height:160%;
+	}
+}
+
+.workIntro:last-child {
+	padding-top:15px;
+	@media screen and (max-width: $smallBreak) {
+		padding-top:5px;
+	}
+}
+
+/* contact */
+
+#contact {
+	padding:60px 13% 0 13%;
+	background:$mediumBlue;
+	position:relative;
+	@media screen and (max-width: $smallBreak) {
+		height:auto;
+		padding:60px 30px 40px 30px;
+	}
+}
+
+#contact a {
+	font-family: $fontBold;
+}
+
+#contact_form {
+	margin-top:40px;
+	@media screen and (max-width: $largeBreak) {
+		margin-top:30px;
+	}
+}
+
+input,
+textarea {
+	width:100%;
+	margin:5px 0 20px 0;
+	border:1px solid $white;
+	padding:5px;
+}
+
+textarea {
+	height:125px;
+}
+
+button {
+	text-transform: uppercase;
+	letter-spacing:.025em;
+	margin-top:10px;
+	padding:10px;
+	color:$white;
+	background:$blue;
+	border:1px solid $blue;
+}
+
+button:hover {
+	background:$gray;
+	border:1px solid $gray;
+}
+
+footer {
+	width:100%;
+	height:40px;
+	position:absolute;
+	left:0;
+	bottom:0;
+	margin-bottom:40px;
+	padding-bottom:-40px;
+	display:block;
+	@media screen and (max-width: $smallBreak) {
+		position:relative;
+		top:0;
+		margin:20px 0 0 0;
+		padding:0;
+	}
+}
+
+footer p {
+	font-size:80%;
+	text-align:center;
+	padding:20px 0;
+}
+
+/* fix iPad 100% height glitch */
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+	#contact {
+		min-height:768px;
+		margin-top:120px;
+	}
+
+	footer {
+		bottom:60px;
+	}
+}
+
+/* iPads (portrait) ----------- 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	#contact {
+		min-height:1024px;
+		margin-top:120px;
+	}
+
+	footer {
+		bottom:60px;
+	}
+}
+*/
