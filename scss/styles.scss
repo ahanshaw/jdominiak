@@ -30,13 +30,13 @@ $mediumBlue:rgba(81,148,219,.4);
 $lightBlue:rgba(81,148,219,.1);
 $clear:rgba(255,255,255,0);
 
-// fonts 
+// fonts
 
 $fontNormal:'latoregular', sans-serif;
 $fontMedium:'latomedium', sans-serif;
 $fontBold:'latobold', sans-serif;
 
-// media breaks 
+// media breaks
 
 $largeBreak: 1024px;
 $mediumBreak:768px;
@@ -207,7 +207,7 @@ nav .current a {
 	display:block;
 	@media screen and (max-width: $smallBreak) {
 		display:none;
-	}	
+	}
 }
 
 #banner {
@@ -233,20 +233,20 @@ nav .current a {
 	}
 }
 
-@mixin vertCenter {	
+@mixin vertCenter {
 	position: relative;
 	top: 50%;
-	-webkit-transform: translateY(-50%);	
-	-ms-transform: translateY(-50%);	
-	transform: translateY(-50%);	
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
-@mixin vertCenterMobile {	
+@mixin vertCenterMobile {
 	position: relative;
 	top: 0;
-	-webkit-transform: translateY(0%);	
-	-ms-transform: translateY(0%);	
-	transform: translateY(0%);	
+	-webkit-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	transform: translateY(0%);
 }
 
 #logo {
@@ -405,6 +405,10 @@ nav .current a {
 	}
 }
 
+.item .small {
+	font-size:85%;
+}
+
 .workIntro {
 	font-size:115% !important;
 	line-height:175%;
@@ -499,9 +503,9 @@ footer p {
 /* fix iPad 100% height glitch */
 
 /* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape) {
 	#contact {
 		min-height:768px;
@@ -513,10 +517,10 @@ and (orientation : landscape) {
 	}
 }
 
-/* iPads (portrait) ----------- 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+/* iPads (portrait) -----------
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : portrait) {
 	#contact {
 		min-height:1024px;

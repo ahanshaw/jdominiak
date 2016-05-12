@@ -191,7 +191,6 @@ nav .current a {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
   @media screen and (max-width: 1024px) {
     #logo {
@@ -206,7 +205,6 @@ nav .current a {
       position: relative;
       top: 0;
       -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
       transform: translateY(0%); } }
 
 @media screen and (max-width: 750px) {
@@ -233,7 +231,6 @@ nav .current a {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
   @media screen and (max-width: 1024px) {
     #bio {
@@ -250,7 +247,6 @@ nav .current a {
       position: relative;
       top: 0;
       -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
       transform: translateY(0%); } }
 
 #bio h1 {
@@ -340,6 +336,9 @@ nav .current a {
       font-size: 110%;
       padding-bottom: 20px; } }
 
+.item .small {
+  font-size: 85%; }
+
 .workIntro {
   font-size: 115% !important;
   line-height: 175%;
@@ -428,10 +427,10 @@ footer p {
 
   footer {
     bottom: 60px; } }
-/* iPads (portrait) ----------- 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+/* iPads (portrait) -----------
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : portrait) {
 	#contact {
 		min-height:1024px;
