@@ -327,6 +327,10 @@ nav .current a {
   color: #365e9b;
   margin-top: 20px; }
 
+.item a:hover {
+  color: #365e9b;
+  text-decoration: underline; }
+
 .item p {
   font-size: 105%;
   color: #444;
@@ -337,7 +341,9 @@ nav .current a {
       padding-bottom: 20px; } }
 
 .item .small {
-  font-size: 85%; }
+  font-size: 75%;
+  text-align: right;
+  padding-top: 5px; }
 
 .workIntro {
   font-size: 115% !important;
